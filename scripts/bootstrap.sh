@@ -33,8 +33,13 @@ fi
 
 # Instalar dependencias Python
 if [ -f requirements.txt ]; then
-  python3 -m pip install -r requirements.txt --quiet
+  if [ ! -d .venv ]; then
+    python3 -m venv .venv
+    echo "Virtualenv creado en .venv"
+  fi
+  .venv/bin/pip install -r requirements.txt --quiet
   echo "Dependencias Python instaladas."
+  echo "  Activar entorno: source .venv/bin/activate"
 fi
 
 # Crear .env desde .env.example si no existe
@@ -65,10 +70,10 @@ echo "  1. Levantar servicios base:"
 echo "       docker compose up -d postgres minio redis"
 echo
 echo "  2. Cargar base de datos:"
-echo "       python scripts/load_postgres.py"
+echo "       .venv/bin/python scripts/load_postgres.py"
 echo
 echo "  3. Procesar eventos GitHub Archive:"
-echo "       python scripts/process_events.py"
+echo "       .venv/bin/python scripts/process_events.py"
 echo
 echo "  4. Verificar todo:"
 echo "       ./scripts/check.sh"
