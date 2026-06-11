@@ -211,13 +211,13 @@ Resultado: app-role con inline policy de privilegio mínimo sobre course-data-ra
 
 Al finalizar deberías poder mostrar:
 
-- [ ] Bucket `course-data-raw` con al menos un objeto
-- [ ] Grupo `bigdata-read` con la policy adjuntada
-- [ ] Usuario `lab-user` en el grupo
-- [ ] Rol `app-role` con trust policy para EC2 e inline policy mínima
-- [ ] Output del `sts assume-role` con `Expiration` visible
-- [ ] Decisión 005 en `docs/decisions.md`
-- [ ] Columna "identidad/credencial" en `docs/architecture.md` revisada
+- [x] Bucket `course-data-raw` con al menos un objeto
+- [x] Grupo `bigdata-read` con la policy adjuntada
+- [x] Usuario `lab-user` en el grupo
+- [x] Rol `app-role` con trust policy para EC2 e inline policy mínima
+- [x] Output del `sts assume-role` con `Expiration` visible
+- [x] Decisión 005 en `docs/decisions.md`
+- [xgit s] Columna "identidad/credencial" en `docs/architecture.md` revisada
 
 ---
 
